@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="~/assets/moreStyle.css" />
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon (1).ico" />
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/281e3d2514.js"
+            crossorigin="anonymous"></script>
+    <title>Galaxy Cinema | rạp phim hay nhất Việt Nam 2022</title>
+</head>
+<body>
+    <div id="wrapper">
+        @Html.Partial("~/Areas/admin/Views/Shared/_Header.cshtml", "_Header")
+        <div id="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tab-movies">
+                        <div class="tab-movies-line">
+                            <ul class="nav-tab">
+                                <li class="active">
+                                    <a href="#!#tab-onshow" data-toggle="tab" aria-expanded="true">
+                                        Phim đang chiếu
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#!#tab-oncoming" data-toggle="tab" aria-expanded="false">
+                                        phim sắp chiếu
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="row">
+                <section class="col-md-12 col-xs-12">
+                    <div id="content-seo">
+                        <h3>Galaxy Cinema</h3>
+                        <div class="row content-seo">
+                            <div class="col-md-12">
+                                <div class="content-text">
+                                    <p>
+                                        <a href="#"><b>Galaxy Cinema</b></a> là một trong những công
+                                        ty tư nhân đầu tiên về điện ảnh được thành lập từ năm 2003,
+                                        đã khẳng định thương hiệu là 1 trong 10 địa điểm vui chơi
+                                        giải trí được yêu thích nhất. Ngoài hệ thống rạp chiếu phim
+                                        hiện đại, thu hút hàng triệu lượt người đến xem,
+                                        <a href="#"><b>Galaxy Cinema</b></a> còn hấp dẫn khán giả
+                                        bởi không khí thân thiện cũng như chất lượng dịch vụ hàng
+                                        đầu.
+                                    </p>
+                                    <p>
+                                        Đến với site
+                                        <a href="#">
+                                            <i>galaxycine.vn</i>
+                                        </a>
+                                        , khách hàng sẽ dễ dàng tham khảo các
+                                        <a href="#tab-default-1">
+                                            <i>phim đang chiếu,</i>
+                                        </a>
+                                        <a href="#tab-default-2">
+                                            <i>phim mới nhất</i>
+                                        </a>
+                                        đang chiếu hoặc sắp chiếu sẽ được cập nhật thường xuyên.
+                                        <a href="#3a">
+                                            <i>Lịch chiếu</i>
+                                        </a>
+                                        tại tất cả hệ thống
+                                        <a href="#">
+                                            <i>rạp chiếu phim</i>
+                                        </a>
+                                        của
+                                        <a href="#"><b>Galaxy Cinema</b></a>
+                                        cũng được cập nhật đầy đủ hàng ngày hàng giờ trên
+                                        <i>trang chủ</i>
+                                        .
+                                    </p>
+                                    <p>
+                                        Từ vũ trụ điện ảnh Marvel, người hâm mộ sẽ có cuộc tái ngộ
+                                        với Người Nhện qua <em> Spider-Man: No Way Home </em>hoặc
+                                        <em>Doctor Strange 2</em>. Ngoài ra
+                                        <em>
+                                            007: No Time To Die, Turning Red, Minions: The Rise Of
+                                            Gru...
+                                        </em>, là những tác phẩm hứa hẹn sẽ gây bùng nổ phòng vé trong
+                                        thời gian tới
+                                    </p>
+                                    <p>
+                                        Giờ đây đặt vé tại
+                                        <a href="#">
+                                            <i><b>Galaxy Cinema</b> </i>
+                                        </a>
+                                        càng thêm dễ dàng chỉ với vài thao tác vô cùng đơn giản. Để
+                                        mua vé, hãy vào tab Mua vé . Quý khách có thể chọn Mua vé
+                                        theo phim, theo rạp hoặc theo ngày. Sau đó, tiến hành mua vé
+                                        theo các bước hướng dẫn. Chỉ trong vài phút, quý khách sẽ
+                                        nhận được tin nhắn và email phản hồi. Đặt vé thành công của
+                                        <a href="#">
+                                            <i><b>Galaxy Cinema</b></i>
+                                        </a>
+                                        Quý khách có thể dùng tin nhắn lấy vé tại quầy vé của
+                                        <a href="#">
+                                            <i><b>Galaxy Cinema</b></i>
+                                        </a>
+                                        hoặc quét mã QR để một bước vào rạp mà không cần tốn thêm
+                                        bất kỳ công đoàn nào nữa.
+                                    </p>
+                                    <p>
+                                        Nếu bạn chọn được
+                                        <a href="#tab-default-1">
+                                            <i>phim hay</i>
+                                        </a>
+                                        để xem, hãy đặt vé cực nhanh bằng box
+                                        <i>Mua vé nhanh</i> ngay từ
+                                        <a href="#">
+                                            <i>Trang Chủ</i>
+                                        </a>
+                                        . Chỉ cần vài phút, tin nhắn và email phản hồi của
+                                        <a href="#">
+                                            <i><b>Galaxy Cinema</b></i>
+                                        </a>
+                                        sẽ gửi ngay vào điện thoại và hộp main của bạn
+                                    </p>
+                                    <p>
+                                        <a href="#">
+                                            <i><b>Galaxy Cinema</b></i>
+                                        </a>
+                                        luôn có những chương trình
+                                        <a href="#promotion">
+                                            <i> khuyến mãi, ưu đãi</i>
+                                        </a>
+                                        , quà tặng vô cùng hấp dẫn như <i>giảm giá</i> vé, tặng vé
+                                        xem phim miễn phí, tặng combo, tặng quà phim... dành cho các
+                                        khách hàng.
+                                    </p>
+                                    <p>
+                                        Hiện nay,
+                                        <a href="#">
+                                            <i><b>Galaxy Cinema</b></i>
+                                        </a>
+                                        đang càng ngày càng phát triển hơn nữa với các chương trình
+                                        đặc sắc, các khuyến mãi hấp dẫn, đem đến cho khán giả những
+                                        bộ phim bom tấn của thế giới và Việt Nam nhanh chóng và sớm
+                                        nhất
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="footer-content">
+        @Html.Partial("~/Areas/admin/Views/Shared/_Footer.cshtml", "_Footer")
+    </div>
+    <script src="~/assets/moreJs.js"></script>
+</body>
+</html>

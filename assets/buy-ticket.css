@@ -1,0 +1,96 @@
+.showtimes-group .showtimes-row img {
+	width: 60px;
+	float: left;
+	margin-right: 10px;
+}
+
+.showtimes-group .showtimes-row i {
+	float: right;
+	margin: 6px 0;
+}
+
+.showtimes-group .showtimes-row p {
+	font-size: 14px;
+}
+
+.upper-text{
+	text-transform: uppercase;
+	color: black;
+}
+
+.list-group-item .showtimes-row .vn{
+	color: #a0a3a7;
+}
+
+.showtimes-group .list-group-item.movie {
+    padding: 20px 15px 35px 15px;
+}
+
+#container .tab-movies .tab-content{
+	padding: 50px 0;
+}
+
+.showtimes-group .panel {
+    border-radius: 0;
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+    box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+
+.showtimes-group .panel-title{
+	/* color: white; */
+	font-size: 16px;
+	text-decoration: underline;
+}
+
+.panel-heading{
+	padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+}
+
+.showtimes-group .panel-default > .panel-heading{
+	color: #fff;
+	background-color: #f26b38;
+	border-radius: 0;
+	border-color: #f26b38;
+	line-height: 20px;
+	height: 40px;
+	text-align: center;
+}
+
+.col-md-4{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.panel>.list-group:last-child .list-group-item:last-child, .panel>.panel-collapse>.list-group:last-child .list-group-item:last-child {
+    border-bottom: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.showtimes-group .list-group-item.movie {
+    padding: 20px 15px 35px 15px;
+}
+.panel>.list-group .list-group-item, .panel>.panel-collapse>.list-group .list-group-item {
+    border-width: 1px 0;
+    border-radius: 0;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+

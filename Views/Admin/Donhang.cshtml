@@ -1,0 +1,75 @@
+﻿@using DoAnMonHoc.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAnMonHoc.Models.DONDATHANG>
+@{
+    ViewBag.Title = "Donhang";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>ĐƠN ĐẶT HÀNG</h2>
+
+<p>
+    @Html.ActionLink("TẠO MỚI", "ThemDH")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MADONHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MAKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NGAYDAT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NGAYGIAO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().TINHTRANGDONHANG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DATHANHTOAN)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MADONHANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MAKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYDAT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYGIAO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TINHTRANGDONHANG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATHANHTOAN)
+            </td>
+        <td>
+            @Html.ActionLink("Sửa", "SuaDH", new { id = item.MADONHANG }) |
+            @Html.ActionLink("Chi tiết", "ChitietDH", new { id = item.MADONHANG }) |
+            @Html.ActionLink("Xóa", "XoaDH", new { id = item.MADONHANG })
+        </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Nhac", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

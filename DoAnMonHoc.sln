@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoAnMonHoc", "DoAnMonHoc.csproj", "{02183213-A744-4794-A360-C80CDDE0F4FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02183213-A744-4794-A360-C80CDDE0F4FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02183213-A744-4794-A360-C80CDDE0F4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02183213-A744-4794-A360-C80CDDE0F4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02183213-A744-4794-A360-C80CDDE0F4FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D685490-C04D-4C14-9EE8-574467C8BCC4}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,101 @@
+﻿@model DoAnMonHoc.Models.PHIM
+
+@{
+    ViewBag.Title = "Chitietphim";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>THÔNG TIN CHI TIẾT PHIM</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sách:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENPHIM)
+        </dd>
+
+        <dt>
+            Tên phụ: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENPHU)
+        </dd>
+
+        <dt>
+            Giá bán: 
+        </dt>
+
+        <dd>
+            @String.Format("{0:0,0}",Model.GIABAN) VNĐ
+        </dd>
+
+        <dt>
+            Mô tả: 
+        </dt>
+
+        <dd style="width:600px; text-align:justify">
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+        <dt>
+            Nhà sản xuất:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSX)
+        </dd>
+
+        <dt>
+            Đạo diễn: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DAODIEN)
+        </dd>
+
+        <dt>
+            Quốc gia: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QUOCGIA)
+        </dd>
+
+        <dt>
+            Ảnh bìa: 
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/assets/img/"+ Model.ANHBIA)" style="width:120px" />
+        </dd>
+
+        <dt>
+            Ngày cập nhật
+        </dt>
+
+        <dd>
+            @String.Format("{0:dd/MM/yyyy}", Model.NGAYCAPNHAT) 
+        </dd>
+
+        <dt>
+            Số lượng tồn: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUONGTON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MACD)
+        </dt>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("ĐIỀU CHỈNH", "Suaphim", new { id = Model.MAPHIM }) |
+    @Html.ActionLink("TRỞ VỀ", "Phim")
+</p>

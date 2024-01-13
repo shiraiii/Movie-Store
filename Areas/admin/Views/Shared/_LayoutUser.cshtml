@@ -1,0 +1,377 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/assets/style.css" />
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon (1).ico" />
+    <script src="https://kit.fontawesome.com/281e3d2514.js"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Galaxy Cinema | rạp phim hay nhất Việt Nam 2023</title>
+</head>
+<body>
+    <div id="wrapper">
+         @Html.Partial("~/Areas/admin/Views/Shared/_Header.cshtml","_Header")
+        @Html.Partial("~/Areas/admin/Views/Shared/_Slider.cshtml","_Slider")
+        <div id="container">
+            <div class="tab-movies">
+                <ul class="nav-tab">
+                    <li class="active">
+                        <a href="#!#tab-default-1" data-toggle="tab" aria-expanded="true">PHIM ĐANG CHIẾU</a>
+                    </li>
+                    <li>
+                        <a href="#!#tab-default-2" data-toggle="tab" aria-expanded="false">PHIM SẮP CHIẾU</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                        @RenderBody()          
+                    <div class="row">
+                        <div class="col-md-12 pull-right">
+                            <a href="@Url.Action("themPhim","MovieStore")" class="btn secondary fl-right"> Xem thêm </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="promotion-container col-md-12">
+                <section id="promotion">
+                    <h3 class="promotion-heading">TIN KHUYẾN MÃI</h3>
+                    <div class="row promotion">
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-1.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>ai trúng giơ tay - nhân ngay 13 pro max</h2>
+                                        <p>
+                                            iPhone 13 Pro Max đang ở <b>Galaxy Quang Trung</b> chờ
+                                            star nào may mắn đến rước về
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-2.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>
+                                            Ngày Tri Ân của Galaxy Cinema - Ngày Thứ Hai ĐẦU TIÊN
+                                            Mỗi Tháng
+                                        </h2>
+                                        <p>
+                                            Từ lâu, chương trình Ngày Tri Ân Nhằm tạo điều kiện
+                                            thuận lợi hơn cho các khách hàng thả ga xem phim đã trở
+                                            nên quen thuộc với các khách hàng thân yêu của Galaxy
+                                            Cinema.
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-3.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>ZaloPay Tặng 25K Khi Đặt Vé Galaxy Cinema</h2>
+                                        <p>
+                                            Giảm 25k khi thanh toán vé phim từ 90k bằng Ví điện tử
+                                            ZaloPay.
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-4.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>Voucher Giảm 50K Dành Tặng Các Stars!</h2>
+                                        <p>
+                                            Loạt voucher giảm 50K dành tặng các Stars. Đặt vé ngay
+                                            thôi!
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-5.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>Review Có Tâm - Nhận Quà Xứng Tầm</h2>
+                                        <p>Review tích cực, nhận quà thích cực!</p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-6.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>Xem Phim Hay - Nhận Voucher Garena Liền Tay</h2>
+                                        <p>
+                                            iPhone 13 Pro Max đang ở <b>Galaxy Quang Trung</b> chờ
+                                            star nào may mắn đến rước về
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-7.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>Đổi Stars Nhận Combo Bảo Vệ Môi Trường</h2>
+                                        <p>
+                                            <b>Galaxy Cinema</b> dành tặng <b>Combo Utensil</b> -
+                                            thân thiện môi trường!
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-8.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>Happy Day</h2>
+                                        <p>
+                                            Vào <strong>thứ 3 hàng tuần</strong> - Happy Day, ưu đãi
+                                            giá vé <strong>CHỈ TỪ 50K</strong>!
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-9.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>Ngày Thành Viên - Milo Day: Ly Khủng Giá "Mini"</h2>
+                                        <p>
+                                            Đại tiệc Milo Day, Galaxy dành tặng các Stars thêm một
+                                            ngày tràn đầy “yêu thương”.
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-10.png" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>Galaxy Cinema tri ân thành viên</h2>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-6 promotion-items">
+                            <div class="promotion-items-home">
+                                <a href="#3a">
+                                    <img src="~/assets/img/pro-11.jpg" alt="" />
+                                </a>
+                                <div class="description-hover overlay">
+                                    <div class="info">
+                                        <h2>Trùm data Galaxy - gói cước siêu khuyến mãi</h2>
+                                        <p>
+                                            Trùm Data Galaxy là gói cước siêu khuyến mại với sự hợp
+                                            tác đặc biệt giữa MobiFone với sự hợp tác đặc biệt giữa
+                                            MobiFone và Galaxy
+                                        </p>
+                                    </div>
+                                    <div class="group">
+                                        <a href="#3a" class="btn secondary-white">Chi tiết</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section class="col-md-12 col-xs-12">
+                    <div id="content-seo">
+                        <h3>Galaxy Cinema</h3>
+                        <div class="row content-seo">
+                            <div class="content-text">
+                                <p>
+                                    <a href="#"><b>Galaxy Cinema</b></a> là một trong những công
+                                    ty tư nhân đầu tiên về điện ảnh được thành lập từ năm 2003,
+                                    đã khẳng định thương hiệu là 1 trong 10 địa điểm vui chơi
+                                    giải trí được yêu thích nhất. Ngoài hệ thống rạp chiếu phim
+                                    hiện đại, thu hút hàng triệu lượt người đến xem,
+                                    <a href="#"><b>Galaxy Cinema</b></a> còn hấp dẫn khán giả
+                                    bởi không khí thân thiện cũng như chất lượng dịch vụ hàng
+                                    đầu.
+                                </p>
+                                <p>
+                                    Đến với site
+                                    <a href="#">
+                                        <i>galaxycine.vn</i>
+                                    </a>
+                                    , khách hàng sẽ dễ dàng tham khảo các
+                                    <a href="#tab-default-1">
+                                        <i>phim đang chiếu,</i>
+                                    </a>
+                                    <a href="#tab-default-2">
+                                        <i>phim mới nhất</i>
+                                    </a>
+                                    đang chiếu hoặc sắp chiếu sẽ được cập nhật thường xuyên.
+                                    <a href="#3a">
+                                        <i>Lịch chiếu</i>
+                                    </a>
+                                    tại tất cả hệ thống
+                                    <a href="#">
+                                        <i>rạp chiếu phim</i>
+                                    </a>
+                                    của
+                                    <a href="#"><b>Galaxy Cinema</b></a>
+                                    cũng được cập nhật đầy đủ hàng ngày hàng giờ trên
+                                    <i>trang chủ</i>
+                                    .
+                                </p>
+                                <p>
+                                    Từ vũ trụ điện ảnh Marvel, người hâm mộ sẽ có cuộc tái ngộ
+                                    với Người Nhện qua <em> Spider-Man: No Way Home </em>hoặc
+                                    <em>Doctor Strange 2</em>. Ngoài ra
+                                    <em>
+                                        007: No Time To Die, Turning Red, Minions: The Rise Of
+                                        Gru...
+                                    </em>, là những tác phẩm hứa hẹn sẽ gây bùng nổ phòng vé trong
+                                    thời gian tới
+                                </p>
+                                <p>
+                                    Giờ đây đặt vé tại
+                                    <a href="#">
+                                        <i><b>Galaxy Cinema</b> </i>
+                                    </a>
+                                    càng thêm dễ dàng chỉ với vài thao tác vô cùng đơn giản. Để
+                                    mua vé, hãy vào tab Mua vé . Quý khách có thể chọn Mua vé
+                                    theo phim, theo rạp hoặc theo ngày. Sau đó, tiến hành mua vé
+                                    theo các bước hướng dẫn. Chỉ trong vài phút, quý khách sẽ
+                                    nhận được tin nhắn và email phản hồi. Đặt vé thành công của
+                                    <a href="#">
+                                        <i><b>Galaxy Cinema</b></i>
+                                    </a>
+                                    Quý khách có thể dùng tin nhắn lấy vé tại quầy vé của
+                                    <a href="#">
+                                        <i><b>Galaxy Cinema</b></i>
+                                    </a>
+                                    hoặc quét mã QR để một bước vào rạp mà không cần tốn thêm
+                                    bất kỳ công đoàn nào nữa.
+                                </p>
+                                <p>
+                                    Nếu bạn chọn được
+                                    <a href="#tab-default-1">
+                                        <i>phim hay</i>
+                                    </a>
+                                    để xem, hãy đặt vé cực nhanh bằng box
+                                    <i>Mua vé nhanh</i> ngay từ
+                                    <a href="#">
+                                        <i>Trang Chủ</i>
+                                    </a>
+                                    . Chỉ cần vài phút, tin nhắn và email phản hồi của
+                                    <a href="#">
+                                        <i><b>Galaxy Cinema</b></i>
+                                    </a>
+                                    sẽ gửi ngay vào điện thoại và hộp main của bạn
+                                </p>
+                                <p>
+                                    <a href="#">
+                                        <i><b>Galaxy Cinema</b></i>
+                                    </a>
+                                    luôn có những chương trình
+                                    <a href="#promotion">
+                                        <i> khuyến mãi, ưu đãi</i>
+                                    </a>
+                                    , quà tặng vô cùng hấp dẫn như <i>giảm giá</i> vé, tặng vé
+                                    xem phim miễn phí, tặng combo, tặng quà phim... dành cho các
+                                    khách hàng.
+                                </p>
+                                <p>
+                                    Hiện nay,
+                                    <a href="#">
+                                        <i><b>Galaxy Cinema</b></i>
+                                    </a>
+                                    đang càng ngày càng phát triển hơn nữa với các chương trình
+                                    đặc sắc, các khuyến mãi hấp dẫn, đem đến cho khán giả những
+                                    bộ phim bom tấn của thế giới và Việt Nam nhanh chóng và sớm
+                                    nhất
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="footer-content">
+        @Html.Partial("~/Areas/admin/Views/Shared/_Footer.cshtml","_Footer")
+    </div>
+    <script src="~/assets/main.js"></script>
+</body>
+</html>

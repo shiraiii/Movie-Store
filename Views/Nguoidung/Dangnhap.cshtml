@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Dangnhap";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAccount.cshtml";
+}
+<h4 style="color:red; text-align:center"> @ViewBag.Thongbao</h4>
+<table style="margin:0 auto">
+    <h3 style="text-align:center">ĐĂNG NHẬP</h3>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td> Tên đăng nhập:</td>
+            <td>
+                <input class="login" title="Tên đăng nhập phải nhiều hơn 8 kí tự và ít hơn 20 kí tự" pattern="[a-zA-Z0-9]{8,20}" type="text" required @Html.TextBox("TenDN")
+                <p>@ViewData["Loi1"]</p>
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td align="right"> Mật khẩu:</td>
+            <td>
+                <input class="login" title="Mật khẩu phải hơn 8 kí tự" pattern="[a-zA-Z0-9]{8,20}" type="password" required @Html.Password("Matkhau")
+                <p>@ViewData["Loi2"]</p>
+            </td>
+        </tr>
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <input class="btn primary input" type="submit" value="Đăng nhập" />
+                <p>
+                    Chưa có tài khoản?
+                    <a href="@Url.Action("Dangky", "Nguoidung")">Đăng ký</a>
+                </p>
+            </td>
+        </tr>
+
+    }
+</table>

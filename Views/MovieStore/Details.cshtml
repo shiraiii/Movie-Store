@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutDetails.cshtml";
+}
+<div class="row">
+    <div class="col-md-8 col-sm-8">
+        <div class="detail-feture">
+            <article>
+
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-4 col-xs-8 col-xs-offset-2 col-md-offset-0">
+                        <div class="detail-feat-img">
+                            <img src="~/assets/img/@Model.ANHPHU" style="width: 250px; height:382px" />
+                        </div>
+                    </div>
+                    <div class="details col-md-8 col-sm-8">
+                        <h2 class="detail-title upper-text">@Model.TENPHIM</h2>
+                        <h2 class="detail-title under-text vn">@Model.TENPHU</h2>
+                        <div class="detail-info">
+                            <div class="detail-info-row">
+                                <label>Nhà sản xuất: </label>
+                                <div class="detail-info-right">
+                                    <a>@Model.NSX</a>
+                                </div>
+                            </div>
+                            <div class="detail-info-row">
+                                <label>Thể loại: </label>
+                                <div class="detail-info-right">
+                                    <a>@Model.TENCHUDE</a>
+                                </div>
+                            </div>
+                            <div class="detail-info-row">
+                                <label>Đạo diễn: </label>
+                                <div class="detail-info-right">
+                                    <a>@Model.DAODIEN</a>
+                                </div>
+                            </div>
+                            <div class="detail-info-row">
+                                <label>Quốc gia: </label>
+                                <div class="detail-info-right">
+                                    <a>@Model.QUOCGIA</a>
+                                </div>
+                            </div>
+                            <div class="detail-info-row">
+                                <label>Ngày khởi chiếu: </label>
+                                <div class="detail-info-right">
+                                    <a>@Model.NGAYCAPNHAT</a>
+                                </div>
+                            </div>
+                            <div class="detail-info-row">
+                                <div class="detail-info-right" id="Datmua">
+                                    <a style="color: white" href="@Url.Action("ThemGiohang", "GioHang", new { @iMaPhim= @Model.MAPHIM, @strURL=Request.Url.ToString() })" class="btn primary">
+                                        THÊM VÀO GIỎ HÀNG
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>

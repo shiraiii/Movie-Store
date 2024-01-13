@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="~/assets/style.css" rel="stylesheet" />
+    <script src="~/assets/BuyTicket.js"></script>
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon (1).ico" />
+    <script src="https://kit.fontawesome.com/281e3d2514.js"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Galaxy Cinema | rạp phim hay nhất Việt Nam 2022</title>
+</head>
+<body>
+    @Html.Partial("~/Areas/admin/Views/Shared/_Header.cshtml", "_Header")
+    @Html.Partial("~/Areas/admin/Views/Shared/_Slider.cshtml","_Slider")
+    <div class="block-wrapper">
+        <div class="container">
+            <div class="row">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="@Url.Action("Index","MovieStore")">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="#">Đặt vé</a>
+                    </li>
+                    <li class="breadcrumb-item active upper-text">
+                        @Model.TENPHIM
+                    </li>
+                </ol>
+            </div>
+                @RenderBody()
+        </div>
+    </div>
+    <div id="footer-content">
+        @Html.Partial("~/Areas/admin/Views/Shared/_Footer.cshtml", "_Footer")
+    </div>
+
+    <div class="login-modal js-modal fade in">
+        <div class="modal modal-dialog animated slideInDown">
+            <div class="login-wrapper">
+                <div class="modal-container js-modal-container">
+                    <span class="close">
+                        <i class="icon-cancel js-modal-close"></i>
+                    </span>
+                    <div class="tab-login-line">
+                        <ul class="nav nav-tab">
+                            <li class="active">
+                                <a href="@Url.Action("Dangnhap","Nguoidung")"
+                                   id="a_tab_login_1"
+                                   data-toggle="tab"
+                                   aria-expanded="true">
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li><a href="" class="line"> / </a></li>
+                            <li class="">
+                                <a href="@Url.Action("Dangky","Nguoidung")"
+                                   id="a_tab_login_2"
+                                   data-toggle="tab"
+                                   aria-expanded="false">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

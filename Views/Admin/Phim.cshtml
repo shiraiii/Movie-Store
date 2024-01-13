@@ -1,0 +1,115 @@
+﻿@using DoAnMonHoc.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<DoAnMonHoc.Models.PHIM>
+@{
+    ViewBag.Title = "Phim";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@helper Truncate(string input, int length) 
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0,length)<text>...</text>
+    }    
+}
+<h2>QUẢN LÝ THÔNG TIN PHIM</h2>
+<p>
+    @Html.ActionLink("Create New", "Themmoiphim")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:50px">
+            @Html.DisplayNameFor(model => model.First().MAPHIM)
+        </th>
+        <th style="width:200px">
+            @Html.DisplayNameFor(model => model.First().TENPHIM)
+        </th>
+        <th style="width:100px">
+            @Html.DisplayNameFor(model => model.First().TENCHUDE)
+        </th>
+        <th style="width:100px">
+            @Html.DisplayNameFor(model => model.First().GIABAN)
+        </th>
+        <th style="width:200px">
+            @Html.DisplayNameFor(model => model.First().MOTA)
+        </th>
+        <th style="width:200px">
+            @Html.DisplayNameFor(model => model.First().ANHBIA)
+        </th>
+        <th style="width:200px">
+            @Html.DisplayNameFor(model => model.First().NGAYCAPNHAT)
+        </th>
+        <th style="width:50px">
+            @Html.DisplayNameFor(model => model.First().SOLUONGTON)
+        </th>
+        <th style="width:200px">
+            @Html.DisplayNameFor(model => model.First().NSX)
+        </th>
+        <th style="width:200px">
+            @Html.DisplayNameFor(model => model.First().DAODIEN)
+        </th>
+        <th style="width:200px">
+            @Html.DisplayNameFor(model => model.First().QUOCGIA)
+        </th>
+        <th width="200px"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAPHIM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENPHIM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENCHUDE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GIABAN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOTA)
+        </td>
+        <td>
+            <img style="width:200px" src="@Url.Content("~/assets/img/"+ item.ANHBIA)" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NGAYCAPNHAT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SOLUONGTON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DAODIEN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUOCGIA)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Suaphim", new { id = item.MAPHIM }) |
+            @Html.ActionLink("Chi tiết", "Chitietphim", new { id = item.MAPHIM }) |
+            @Html.ActionLink("Xóa", "Xoaphim", new { id = item.MAPHIM })
+        </td>
+    </tr>
+}
+</table>
+Trang @(Model.PageCount<Model.PageNumber ? 0: Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Phim", new {page = page}))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+        border: 1px solid black;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+</style>

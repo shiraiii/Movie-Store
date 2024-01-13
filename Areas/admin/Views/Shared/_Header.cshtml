@@ -1,0 +1,168 @@
+﻿
+<div id="top-header">
+    <div id="top-container">
+        <div class="logo">
+            <a href="@Url.Action("Index","MovieStore")">
+                <img src="~/assets/img/galaxy-logo.png"
+                     alt=""
+                     href="~/index.html" />
+            </a>
+        </div>
+        <div class="sub-nav">
+            <div class="search">
+                <input type="text"
+                       class="movie-name-input"
+                       placeholder="Tìm tên phim, diễn viên..." />
+                <button type="submit" class="search-btn"></button>
+            </div>
+            <ul class="sub-list">
+                <li class="login-section">
+                    <a href="@Url.Action("Dangnhap","Nguoidung")" class="js-login-section"><i class="fa-solid fa-user login-user"></i>Đăng nhập</a>
+                </li>
+                <li>
+                    @Html.Partial("~/Views/Giohang/GiohangPartial.cshtml", " GiohangPartial")
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="mid-header">
+    <div id="nav-container">
+        <ul class="nav">
+            <li><a href="./buy-ticket.html">mua vé</a></li>
+            <li>
+                <a href="#">
+                    phim
+                    <i class="fa-solid fa-angle-down nav-arrow"></i>
+                </a>
+                <div id="movie-nav-hidden">
+                    <div class="hidden-block">
+                        <div class="row row-heading-nav">
+                            <h3>
+                                <a class="row heading-nav" href="#">PHIM ĐANG CHIẾU</a>
+                            </h3>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="row-movie-group-header">
+                            <div class="movie-items">
+                                <img src="~/assets/img/movie1.jpg"
+                                     alt=""
+                                     class="movie-pic" />
+                                <div class="title-movie-header">
+                                    <h4 class="upper-text">DÂN CHƠI KHÔNG SỢ CON RƠI</h4>
+                                    <h4 class="under-text"></h4>
+                                </div>
+                            </div>
+                            <div class="movie-items">
+                                <img src="~/assets/img/movie2.jpg"
+                                     alt=""
+                                     class="movie-pic" />
+                                <div class="title-movie-header">
+                                    <h4 class="upper-text">MY GIRL</h4>
+                                    <h4 class="under-text">
+                                        ĐIỀU ƯỚC CUỐI CÙNG CỦA TÙ NHÂN 2037
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="movie-items">
+                                <img src="~/assets/img/movie3.jpg"
+                                     alt=""
+                                     class="movie-pic" />
+                                <div class="title-movie-header">
+                                    <h4 class="upper-text">
+                                        DETECTIVE CONAN MOVIE 25: THE BRIDE OF HALLOWEEN
+                                    </h4>
+                                    <h4 class="under-text">
+                                        THÁM TỬ LỪNG DANH CONAN: NÀNG DÂU HALLOWEEN
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="movie-items">
+                                <img src="~/assets/img/movie4.jpg"
+                                     alt=""
+                                     class="movie-pic" />
+                                <div class="title-movie-header">
+                                    <h4 class="upper-text">DC LEAGUE OF SUPER-PETS</h4>
+                                    <h4 class="under-text">LIÊN MINH SIÊU THÚ</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="row-heading-nav">
+                            <h3><a class="heading-nav" href="#">PHIM SẮP CHIẾU</a></h3>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="row-movie-group-header">
+                            <div class="movie-items">
+                                <img src="~/assets/img/movie5.jpg"
+                                     alt=""
+                                     class="movie-pic" />
+                                <div class="title-movie-header">
+                                    <h4 class="upper-text">BULLET TRAIN</h4>
+                                    <h4 class="under-text">SÁT THỦ ĐỐI ĐẦU</h4>
+                                </div>
+                            </div>
+                            <div class="movie-items">
+                                <img src="~/assets/img/movie6.jpg"
+                                     alt=""
+                                     class="movie-pic" />
+                                <div class="title-movie-header">
+                                    <h4 class="upper-text">ALIENOID</h4>
+                                    <h4 class="under-text">
+                                        ALIENOID: CUỘC CHIẾN XUYÊN KHÔNG
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="movie-items">
+                                <img src="~/assets/img/movie7.jpeg"
+                                     alt=""
+                                     class="movie-pic" />
+                                <div class="title-movie-header">
+                                    <h4 class="upper-text">GULLIVER RETURNS</h4>
+                                    <h4 class="under-text">GULLIVER DU KÝ</h4>
+                                </div>
+                            </div>
+                            <div class="movie-items">
+                                <img src="~/assets/img/movie8.jpg"
+                                     alt=""
+                                     class="movie-pic" />
+                                <div class="title-movie-header">
+                                    <h4 class="upper-text">MAHLÛKAT</h4>
+                                    <h4 class="under-text">NHẬP HỒN</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-movie-group-header"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="visible">
+                <a href="#">
+                    góc điện ảnh
+                    <i class="fa-solid fa-angle-down nav-arrow"></i>
+                </a>
+                <ul class="undefined">
+                    <li><a href="#">THỂ LOẠI PHIM</a></li>
+                    <li><a href="#">DIỄN VIÊN</a></li>
+                    <li><a href="#">ĐẠO DIỄN</a></li>
+                    <li><a href="#">BÌNH LUẬN PHIM</a></li>
+                    <li><a href="#">BLOG ĐIỆN ảnh</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    sự kiện
+                    <i class="fa-solid fa-angle-down nav-arrow"></i>
+                </a>
+                <ul class="undefined">
+                    <li><a href="#">ƯU ĐÃI</a></li>
+                    <li><a href="#">PHIM HAY THÁNG</a></li>
+                </ul>
+            </li>
+            <li><a href="#">rạp/ giá vé</a></li>
+            <li><a href="#">hỗ trợ</a></li>
+            <li><a href="#">thành viên</a></li>
+        </ul>
+    </div>
+</div>

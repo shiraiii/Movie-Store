@@ -1,0 +1,85 @@
+﻿@model PagedList.PagedList<DoAnMonHoc.Models.KHACHHANG>
+@using DoAnMonHoc.Models;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Taikhoan";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ THÔNG TIN NGƯỜI DÙNG</h2>
+
+<p>
+    @Html.ActionLink("TẠO MỚI", "ThemmoiKH")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().HoTen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Taikhoan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().MATKHAU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().EMAIL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DIACHIKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().DIENTHOAIKH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().NGAYSINH)
+        </th>
+        <th width="200px"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taikhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MATKHAU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIACHIKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIENTHOAIKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYSINH)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "SuaKH", new { id = item.MAKH }) |
+                @Html.ActionLink("Chi tiết", "ChitietKH", new { id = item.MAKH }) |
+                @Html.ActionLink("Xóa", "XoaKH", new { id = item.MAKH })
+            </td>
+        </tr>
+    }
+
+</table>
+Trang @(Model.PageCount<Model.PageNumber ? 0: Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("Phim", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+        border: 1px solid black;
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+</style>

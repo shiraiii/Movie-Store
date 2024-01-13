@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "themPhim";
+    Layout = "~/Areas/admin/Views/Shared/_MoreMovie.cshtml";
+}
+@model IEnumerable<DoAnMonHoc.Models.PHIM>
+<div id="tab-onshow" class="tab-pane active">
+    <div class="row watchmovie-group animated fadeInUp">
+        @foreach(var sp in Model.Take(8))
+        { 
+        <div class="col-md-3 col-sm-3 col-xs-6 watchmovie-item">
+            <div class="article-watchmovie">
+                <img src="~/assets/img/@sp.ANHPHU"
+                     alt="@sp.TENPHIM"
+                     class="loading" />
+                <a href="">
+                    <div class="description-hover overlay">
+                        <div class="movies-content">
+                            <i class="icon-c16"></i>
+                            <div class="group">
+                                <a href="@Url.Action("Details","MovieStore", new {id = sp.MAPHIM})" class="btn secondary-white">Mua vé</a>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="title-watchmovie">
+                <h4 class="upper-text">@sp.TENPHIM</h4>
+                <h4 class="under-text">@sp.TENPHU</h4>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+<div id="tab-oncoming" class="tab-pane">
+    <div class="row watchmovie-group animated fadeInUp">
+        @foreach (var sp in Model.Take(7).OrderBy(i => i.NGAYCAPNHAT))
+        {
+            <div class="col-md-3 col-sm-3 col-xs-6 watchmovie-item" style="margin-left:0">
+                <div class="article-watchmovie">
+                    <img src="~/assets/img/@sp.ANHPHU"
+                         alt="@sp.TENPHIM"
+                         class="loading" />
+                    <a href="">
+                        <div class="description-hover overlay">
+                            <div class="movies-content">
+                                <i class="icon-c16"></i>
+                                <div class="group">
+                                    <a href="@Url.Action("Details","MovieStore", new {id = sp.MAPHIM})" class="btn secondary-white">Mua vé</a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="title-watchmovie">
+                    <h4 class="upper-text">@sp.TENPHIM</h4>
+                    <h4 class="under-text">@sp.TENPHU</h4>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+

@@ -1,0 +1,75 @@
+﻿@model DoAnMonHoc.Models.KHACHHANG
+
+@{
+    ViewBag.Title = "ChitietKH";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CHI TIẾT KÁCH HÀNG</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Họ tên:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            Tài khoản: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Taikhoan)
+        </dd>
+
+        <dt>
+            Mật khẩu: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MATKHAU)
+        </dd>
+
+        <dt>
+            Email: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL)
+        </dd>
+
+        <dt>
+            Địa chỉ: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHIKH)
+        </dd>
+
+        <dt>
+            Số điện thoại: 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIENTHOAIKH)
+        </dd>
+
+        <dt>
+            Ngày sinh: 
+        </dt>
+
+        <dd>
+            @String.Format("{0:dd/MM/yyyy}", Model.NGAYSINH)
+
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("ĐIỀU CHỈNH", "SuaKH", new { id = Model.MAKH }) |
+    @Html.ActionLink("TRỞ VỀ", "Taikhoan")
+</p>

@@ -1,0 +1,536 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/assets/style.css" />
+    <link rel="icon" type="image/x-icon" href="~/assets/img/favicon (1).ico" />
+    <script src="~/assets/main.js"></script>
+    <script src="https://kit.fontawesome.com/281e3d2514.js"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Galaxy Cinema | rạp phim hay nhất Việt Nam 2022</title>
+</head>
+<body>
+    <div id="top-header">
+        <div id="top-container">
+            <div class="logo">
+                <a href="@Url.Action("Index","MovieStore")">
+                    <img src="~/assets/img/galaxy-logo.png"
+                         alt=""
+                         href="./index.html" />
+                </a>
+            </div>
+            <div class="sub-nav">
+                <div class="search">
+                    <input type="text"
+                           class="movie-name-input"
+                           placeholder="Tìm tên phim, diễn viên..." />
+                    <button type="submit" class="search-btn"></button>
+                </div>
+                <ul class="sub-list">
+                    <li class="login-section">
+                        <a href="#" class="js-login-section"><i class="fa-solid fa-user login-user"></i>Đăng nhập</a>
+                    </li>
+                    <li><a href="#" style="color: orange">VN</a></li>
+                    <span class="vertical-line">|</span>
+                    <li><a href="./index_en.html">EN</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mid-header">
+        <div id="nav-container">
+            <ul class="nav">
+                <li><a href="./buy-ticket.html">mua vé</a></li>
+                <li>
+                    <a href="#">
+                        phim
+                        <i class="fa-solid fa-angle-down nav-arrow"></i>
+                    </a>
+                    <div id="movie-nav-hidden">
+                        <div class="hidden-block">
+                            <div class="row row-heading-nav">
+                                <h3>
+                                    <a class="row heading-nav" href="#">PHIM ĐANG CHIẾU</a>
+                                </h3>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="row-movie-group-header">
+                                <div class="movie-items">
+                                    <img src="~/assets/img/movie1.jpg"
+                                         alt=""
+                                         class="movie-pic" />
+                                    <div class="title-movie-header">
+                                        <h4 class="upper-text">DÂN CHƠI KHÔNG SỢ CON RƠI</h4>
+                                        <h4 class="under-text"></h4>
+                                    </div>
+                                </div>
+                                <div class="movie-items">
+                                    <img src="~/assets/img/movie2.jpg"
+                                         alt=""
+                                         class="movie-pic" />
+                                    <div class="title-movie-header">
+                                        <h4 class="upper-text">MY GIRL</h4>
+                                        <h4 class="under-text">
+                                            ĐIỀU ƯỚC CUỐI CÙNG CỦA TÙ NHÂN 2037
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="movie-items">
+                                    <img src="~/assets/img/movie3.jpg"
+                                         alt=""
+                                         class="movie-pic" />
+                                    <div class="title-movie-header">
+                                        <h4 class="upper-text">
+                                            DETECTIVE CONAN MOVIE 25: THE BRIDE OF HALLOWEEN
+                                        </h4>
+                                        <h4 class="under-text">
+                                            THÁM TỬ LỪNG DANH CONAN: NÀNG DÂU HALLOWEEN
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="movie-items">
+                                    <img src="~/assets/img/movie4.jpg"
+                                         alt=""
+                                         class="movie-pic" />
+                                    <div class="title-movie-header">
+                                        <h4 class="upper-text">DC LEAGUE OF SUPER-PETS</h4>
+                                        <h4 class="under-text">LIÊN MINH SIÊU THÚ</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="row-heading-nav">
+                                <h3><a class="heading-nav" href="#">PHIM SẮP CHIẾU</a></h3>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="row-movie-group-header">
+                                <div class="movie-items">
+                                    <img src="~/assets/img/movie5.jpg"
+                                         alt=""
+                                         class="movie-pic" />
+                                    <div class="title-movie-header">
+                                        <h4 class="upper-text">BULLET TRAIN</h4>
+                                        <h4 class="under-text">SÁT THỦ ĐỐI ĐẦU</h4>
+                                    </div>
+                                </div>
+                                <div class="movie-items">
+                                    <img src="~/assets/img/movie6.jpg"
+                                         alt=""
+                                         class="movie-pic" />
+                                    <div class="title-movie-header">
+                                        <h4 class="upper-text">ALIENOID</h4>
+                                        <h4 class="under-text">
+                                            ALIENOID: CUỘC CHIẾN XUYÊN KHÔNG
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div class="movie-items">
+                                    <img src="~/assets/img/movie7.jpeg"
+                                         alt=""
+                                         class="movie-pic" />
+                                    <div class="title-movie-header">
+                                        <h4 class="upper-text">GULLIVER RETURNS</h4>
+                                        <h4 class="under-text">GULLIVER DU KÝ</h4>
+                                    </div>
+                                </div>
+                                <div class="movie-items">
+                                    <img src="~/assets/img/movie8.jpg"
+                                         alt=""
+                                         class="movie-pic" />
+                                    <div class="title-movie-header">
+                                        <h4 class="upper-text">MAHLÛKAT</h4>
+                                        <h4 class="under-text">NHẬP HỒN</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row-movie-group-header"></div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </li>
+                <li class="visible">
+                    <a href="#">
+                        góc điện ảnh
+                        <i class="fa-solid fa-angle-down nav-arrow"></i>
+                    </a>
+                    <ul class="undefined">
+                        <li><a href="#">THỂ LOẠI PHIM</a></li>
+                        <li><a href="#">DIỄN VIÊN</a></li>
+                        <li><a href="#">ĐẠO DIỄN</a></li>
+                        <li><a href="#">BÌNH LUẬN PHIM</a></li>
+                        <li><a href="#">BLOG ĐIỆN ảnh</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        sự kiện
+                        <i class="fa-solid fa-angle-down nav-arrow"></i>
+                    </a>
+                    <ul class="undefined">
+                        <li><a href="#">ƯU ĐÃI</a></li>
+                        <li><a href="#">PHIM HAY THÁNG</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">rạp/ giá vé</a></li>
+                <li><a href="#">hỗ trợ</a></li>
+                <li><a href="#">thành viên</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main-section">
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1" />
+                <input type="radio" name="radio-btn" id="radio2" />
+                <input type="radio" name="radio-btn" id="radio3" />
+                <input type="radio" name="radio-btn" id="radio4" />
+                <div class="slide first">
+                    <img src="~/assets/img/background5.jpg" alt="" />
+                </div>
+                <div class="slide">
+                    <img src="~/assets/img/background6.png" alt="" />
+                </div>
+                <div class="slide">
+                    <img src="~/assets/img/background8.jpg" alt="" />
+                </div>
+                <div class="slide">
+                    <img src="~/assets/img/background2.jpg" alt="" />
+                </div>
+
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+            </div>
+            <div class="navigation-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="row">
+        <section class="col-md-12 col-xs-12">
+            <div id="content-seo">
+                <h3>Galaxy Cinema</h3>
+                <div class="row content-seo">
+                    <div class="content-text">
+                        <p>
+                            <a href="#"><b>Galaxy Cinema</b></a> là một trong những công
+                            ty tư nhân đầu tiên về điện ảnh được thành lập từ năm 2003,
+                            đã khẳng định thương hiệu là 1 trong 10 địa điểm vui chơi
+                            giải trí được yêu thích nhất. Ngoài hệ thống rạp chiếu phim
+                            hiện đại, thu hút hàng triệu lượt người đến xem,
+                            <a href="#"><b>Galaxy Cinema</b></a> còn hấp dẫn khán giả
+                            bởi không khí thân thiện cũng như chất lượng dịch vụ hàng
+                            đầu.
+                        </p>
+                        <p>
+                            Đến với site
+                            <a href="#">
+                                <i>galaxycine.vn</i>
+                            </a>
+                            , khách hàng sẽ dễ dàng tham khảo các
+                            <a href="#tab-default-1">
+                                <i>phim đang chiếu,</i>
+                            </a>
+                            <a href="#tab-default-2">
+                                <i>phim mới nhất</i>
+                            </a>
+                            đang chiếu hoặc sắp chiếu sẽ được cập nhật thường xuyên.
+                            <a href="#3a">
+                                <i>Lịch chiếu</i>
+                            </a>
+                            tại tất cả hệ thống
+                            <a href="#">
+                                <i>rạp chiếu phim</i>
+                            </a>
+                            của
+                            <a href="#"><b>Galaxy Cinema</b></a>
+                            cũng được cập nhật đầy đủ hàng ngày hàng giờ trên
+                            <i>trang chủ</i>
+                            .
+                        </p>
+                        <p>
+                            Từ vũ trụ điện ảnh Marvel, người hâm mộ sẽ có cuộc tái ngộ
+                            với Người Nhện qua <em> Spider-Man: No Way Home </em>hoặc
+                            <em>Doctor Strange 2</em>. Ngoài ra
+                            <em>
+                                007: No Time To Die, Turning Red, Minions: The Rise Of
+                                Gru...
+                            </em>, là những tác phẩm hứa hẹn sẽ gây bùng nổ phòng vé trong
+                            thời gian tới
+                        </p>
+                        <p>
+                            Giờ đây đặt vé tại
+                            <a href="#">
+                                <i><b>Galaxy Cinema</b> </i>
+                            </a>
+                            càng thêm dễ dàng chỉ với vài thao tác vô cùng đơn giản. Để
+                            mua vé, hãy vào tab Mua vé . Quý khách có thể chọn Mua vé
+                            theo phim, theo rạp hoặc theo ngày. Sau đó, tiến hành mua vé
+                            theo các bước hướng dẫn. Chỉ trong vài phút, quý khách sẽ
+                            nhận được tin nhắn và email phản hồi. Đặt vé thành công của
+                            <a href="#">
+                                <i><b>Galaxy Cinema</b></i>
+                            </a>
+                            Quý khách có thể dùng tin nhắn lấy vé tại quầy vé của
+                            <a href="#">
+                                <i><b>Galaxy Cinema</b></i>
+                            </a>
+                            hoặc quét mã QR để một bước vào rạp mà không cần tốn thêm
+                            bất kỳ công đoàn nào nữa.
+                        </p>
+                        <p>
+                            Nếu bạn chọn được
+                            <a href="#tab-default-1">
+                                <i>phim hay</i>
+                            </a>
+                            để xem, hãy đặt vé cực nhanh bằng box
+                            <i>Mua vé nhanh</i> ngay từ
+                            <a href="#">
+                                <i>Trang Chủ</i>
+                            </a>
+                            . Chỉ cần vài phút, tin nhắn và email phản hồi của
+                            <a href="#">
+                                <i><b>Galaxy Cinema</b></i>
+                            </a>
+                            sẽ gửi ngay vào điện thoại và hộp main của bạn
+                        </p>
+                        <p>
+                            <a href="#">
+                                <i><b>Galaxy Cinema</b></i>
+                            </a>
+                            luôn có những chương trình
+                            <a href="#promotion">
+                                <i> khuyến mãi, ưu đãi</i>
+                            </a>
+                            , quà tặng vô cùng hấp dẫn như <i>giảm giá</i> vé, tặng vé
+                            xem phim miễn phí, tặng combo, tặng quà phim... dành cho các
+                            khách hàng.
+                        </p>
+                        <p>
+                            Hiện nay,
+                            <a href="#">
+                                <i><b>Galaxy Cinema</b></i>
+                            </a>
+                            đang càng ngày càng phát triển hơn nữa với các chương trình
+                            đặc sắc, các khuyến mãi hấp dẫn, đem đến cho khán giả những
+                            bộ phim bom tấn của thế giới và Việt Nam nhanh chóng và sớm
+                            nhất
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+    </div>
+    <div id="footer-content">
+        <footer class="footer-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <ul class="list-unstyled clear-margins">
+                            <li class="widget-contaier widget-nav-menu">
+                                <h1 class="title-widget">Giới thiệu</h1>
+                                <ul>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Về chúng tôi
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Thỏa thuận sử dụng
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Quy chế hoạt động
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Chính sách bảo mật
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <ul class="list-unstyled clear-margins">
+                            <li class="widget-contaier widget-nav-menu">
+                                <h1 class="title-widget">Góc điện ảnh</h1>
+                                <ul>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Thể loại phim
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Bình luận phim
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Blog điện ảnh
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Phim hay tháng
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <ul class="list-unstyled clear-margins">
+                            <li class="widget-contaier widget-nav-menu">
+                                <h1 class="title-widget">Hỗ Trợ</h1>
+                                <ul>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Góp ý
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Sale & Services
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Rạp/Giá vé
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#3a">
+                                            <i class="fa-solid fa-angles-right"></i>
+                                            Tuyển dụng
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <ul class="list-unstyled clear-margins">
+                            <li class="widget-contaier widget-nav-menu">
+                                <h1 class="title-widget">Giới thiệu</h1>
+                                <div class="social-icons">
+                                    <ul class="nomagrin">
+                                        <a target="_blank"
+                                           href="https://www.facebook.com/galaxycinevn/">
+                                            <i class="fa-brands fa-square-facebook"></i>
+                                        </a>
+                                        <a target="_blank"
+                                           href="https://www.youtube.com/user/galaxymovies">
+                                            <i class="fa-brands fa-youtube"></i>
+                                        </a>
+                                        <a target="_blank"
+                                           href="https://www.instagram.com/galaxycinema/">
+                                            <i class="fa-brands fa-instagram"></i>
+                                        </a>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="store">
+                            <ul class="list-unstyled clear-margins">
+                                <li class="widget-contaier widget-recent-new">
+                                    <h1 class="title-widget">Download app</h1>
+                                    <div class="social-icons">
+                                        <ul class="nomargin">
+                                            <a target="_blank"
+                                               href="https://apps.apple.com/vn/app/galaxy-cinema/id593312549?l=vi">
+                                                <i class="fa-brands fa-apple store-icon"></i>
+                                            </a>
+                                            <a target="_blank"
+                                               href="https://play.google.com/store/apps/details?id=com.galaxy.cinema&hl=vi">
+                                                <i class="fa-brands fa-google-play store-icon"></i>
+                                            </a>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="z-index: 1" class="container ano-trade">
+                <div class="clear"></div>
+                <div class="wrap-icon">
+                    <a href="http://online.gov.vn/Home/WebDetails/5005?AspxAutoDetectCookieSupport=1"
+                       target="_blank">
+                        <img src="~/assets/img/glx_trade.png"
+                             alt=""
+                             style="width: 150px; height: 100%"
+                             class="loading" />
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="login-modal js-modal fade in">
+        <div class="modal modal-dialog animated slideInDown">
+            <div class="login-wrapper">
+                <div class="modal-container js-modal-container">
+                    <span class="close">
+                        <i class="icon-cancel js-modal-close"></i>
+                    </span>
+                    <div class="tab-login-line">
+                        <ul class="nav nav-tab">
+                            <li class="active">
+                                <a href="@Url.Action("Dangnhap","Nguoidung")"
+                                   id="a_tab_login_1"
+                                   data-toggle="tab"
+                                   aria-expanded="true">
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li><a href="" class="line"> / </a></li>
+                            <li class="">
+                                <a href="@Url.Action("Dangky","Nguoidung")"
+                                   id="a_tab_login_2"
+                                   data-toggle="tab"
+                                   aria-expanded="false">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
