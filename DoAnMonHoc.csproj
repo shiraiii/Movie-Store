@@ -51,6 +51,11 @@
       <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -329,15 +334,7 @@
     <Content Include="Areas\admin\Views\Shared\_Footer.cshtml" />
     <Content Include="Areas\admin\Views\Shared\_Header.cshtml" />
     <Content Include="Areas\admin\Views\Shared\_Slider.cshtml" />
-    <Content Include="Models\dbQLBanve.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>dbQLBanve.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Areas\admin\Views\Shared\_MoreMovie.cshtml" />
-    <None Include="Models\dbQLBanve.dbml.layout">
-      <DependentUpon>dbQLBanve.dbml</DependentUpon>
-    </None>
     <Content Include="paper-dashboard-master\.github\workflows\main.yml" />
     <Content Include="paper-dashboard-master\assets\css\bootstrap.min.css.map" />
     <Content Include="paper-dashboard-master\assets\css\paper-dashboard.css.map" />
@@ -386,6 +383,14 @@
     <Content Include="paper-dashboard-master\LICENSE" />
     <Content Include="paper-dashboard-master\package.json" />
     <Content Include="paper-dashboard-master\README.md" />
+    <Content Include="Models\dbQLBanve.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbQLBanve.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Models\dbQLBanve.dbml.layout">
+      <DependentUpon>dbQLBanve.dbml</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />

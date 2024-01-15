@@ -37,33 +37,34 @@
 </div>
 <div id="tab-default-2" class="tab-pane">
     <div class="movie-group">
-        @foreach (var sp in Model.Take(6).OrderBy(i => i.NGAYCAPNHAT))
+        @{ 
+            var newMovie = Model.Take(12).OrderByDescending(i => i.NGAYCAPNHAT);
+        } 
+        @foreach (var sp in newMovie.Take(6))
         {
-            <div class="main-movie col-md-4">
-                <div class="article-movie-home">
-                    <a>
-                        <img src="~/assets/img/@sp.ANHBIA"
-                                alt="@sp.TENPHIM"
-                                class="main-pic" />
-                    </a>
-                    <div class="description-hover overlay">
-                        <div class="movies-content">
-                            <i class="icon-c18"></i>
-                            <div class="group">
-                                <a href="@Url.Action("Details","MovieStore", new {id = sp.MAPHIM})" class="btn secondary-white">
-                                    Mua vé
-                                </a>
-                            </div>
+        <div class="main-movie col-md-4">
+            <div class="article-movie-home">
+                <a>
+                    <img src="~/assets/img/@sp.ANHBIA"
+                         alt="@sp.TENPHIM"
+                         class="main-pic" />
+                </a>
+                <div class="description-hover overlay">
+                    <div class="movies-content">
+                        <i class="icon-c18"></i>
+                        <div class="group">
+                            <a href="@Url.Action("Details","MovieStore", new {id = sp.MAPHIM})" class="btn secondary-white">
+                                Mua vé
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="movie-title">
-                    <h4 class="upper-text">@sp.TENPHIM</h4>
-                    <h4 class="under-text">@sp.TENPHU</h4>
-                </div>
             </div>
-        
-
+            <div class="movie-title">
+                <h4 class="upper-text">@sp.TENPHIM</h4>
+                <h4 class="under-text">@sp.TENPHU</h4>
+            </div>
+        </div>
         }
     </div>
 </div>

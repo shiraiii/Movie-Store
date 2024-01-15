@@ -53,12 +53,6 @@ namespace DoAnMonHoc.Models
     partial void DeletePHIM(PHIM instance);
     #endregion
 		
-		public dbQLBanveDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLBanveConnectionString"].ConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
-		
 		public dbQLBanveDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
@@ -82,8 +76,13 @@ namespace DoAnMonHoc.Models
 		{
 			OnCreated();
 		}
-		
-		public System.Data.Linq.Table<Admin> Admins
+
+        public dbQLBanveDataContext() : base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLBanveConnectionString"].ConnectionString,mappingSource)
+        {
+			OnCreated();
+        }
+
+        public System.Data.Linq.Table<Admin> Admins
 		{
 			get
 			{
@@ -1326,7 +1325,11 @@ namespace DoAnMonHoc.Models
 		
 		private EntitySet<KHUYENMAI> _KHUYENMAIs;
 		
+		private EntityRef<PHIM> _PHIM2;
+		
 		private EntityRef<CHUDE> _CHUDE;
+		
+		private EntityRef<PHIM> _PHIM1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1366,7 +1369,9 @@ namespace DoAnMonHoc.Models
 		{
 			this._CHITIETDONHANGs = new EntitySet<CHITIETDONHANG>(new Action<CHITIETDONHANG>(this.attach_CHITIETDONHANGs), new Action<CHITIETDONHANG>(this.detach_CHITIETDONHANGs));
 			this._KHUYENMAIs = new EntitySet<KHUYENMAI>(new Action<KHUYENMAI>(this.attach_KHUYENMAIs), new Action<KHUYENMAI>(this.detach_KHUYENMAIs));
+			this._PHIM2 = default(EntityRef<PHIM>);
 			this._CHUDE = default(EntityRef<CHUDE>);
+			this._PHIM1 = default(EntityRef<PHIM>);
 			OnCreated();
 		}
 		
@@ -1381,6 +1386,10 @@ namespace DoAnMonHoc.Models
 			{
 				if ((this._MAPHIM != value))
 				{
+					if (this._PHIM1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMAPHIMChanging(value);
 					this.SendPropertyChanging();
 					this._MAPHIM = value;
@@ -1680,6 +1689,35 @@ namespace DoAnMonHoc.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHIM_PHIM", Storage="_PHIM2", ThisKey="MAPHIM", OtherKey="MAPHIM", IsUnique=true, IsForeignKey=false)]
+		public PHIM PHIM2
+		{
+			get
+			{
+				return this._PHIM2.Entity;
+			}
+			set
+			{
+				PHIM previousValue = this._PHIM2.Entity;
+				if (((previousValue != value) 
+							|| (this._PHIM2.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PHIM2.Entity = null;
+						previousValue.PHIM1 = null;
+					}
+					this._PHIM2.Entity = value;
+					if ((value != null))
+					{
+						value.PHIM1 = this;
+					}
+					this.SendPropertyChanged("PHIM2");
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CHUDE_PHIM", Storage="_CHUDE", ThisKey="MACD", OtherKey="MACD", IsForeignKey=true)]
 		public CHUDE CHUDE
 		{
@@ -1710,6 +1748,40 @@ namespace DoAnMonHoc.Models
 						this._MACD = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("CHUDE");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PHIM_PHIM", Storage="_PHIM1", ThisKey="MAPHIM", OtherKey="MAPHIM", IsForeignKey=true)]
+		public PHIM PHIM1
+		{
+			get
+			{
+				return this._PHIM1.Entity;
+			}
+			set
+			{
+				PHIM previousValue = this._PHIM1.Entity;
+				if (((previousValue != value) 
+							|| (this._PHIM1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._PHIM1.Entity = null;
+						previousValue.PHIM2 = null;
+					}
+					this._PHIM1.Entity = value;
+					if ((value != null))
+					{
+						value.PHIM2 = this;
+						this._MAPHIM = value.MAPHIM;
+					}
+					else
+					{
+						this._MAPHIM = default(int);
+					}
+					this.SendPropertyChanged("PHIM1");
 				}
 			}
 		}

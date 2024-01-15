@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBanve" Class="dbQLBanveDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-05ADR85\SQLEXPRESS01;Initial Catalog=QLBanve;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLBanveConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Admin" Member="Admins">
     <Type Name="Admin">
       <Column Name="UserAdmin" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -77,7 +76,9 @@
       <Column Name="TENCHUDE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="PHIM_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MAPHIM" OtherKey="MAPHIM" Type="CHITIETDONHANG" />
       <Association Name="PHIM_KHUYENMAI" Member="KHUYENMAIs" ThisKey="MAPHIM" OtherKey="MAPHIM" Type="KHUYENMAI" />
+      <Association Name="PHIM_PHIM" Member="PHIM2" ThisKey="MAPHIM" OtherKey="MAPHIM" Type="PHIM" Cardinality="One" />
       <Association Name="CHUDE_PHIM" Member="CHUDE" ThisKey="MACD" OtherKey="MACD" Type="CHUDE" IsForeignKey="true" />
+      <Association Name="PHIM_PHIM" Member="PHIM1" ThisKey="MAPHIM" OtherKey="MAPHIM" Type="PHIM" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
