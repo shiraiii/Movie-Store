@@ -6,7 +6,7 @@
 @model IEnumerable<DoAnMonHoc.Models.PHIM>
 <div id="tab-onshow" class="tab-pane active">
     <div class="row watchmovie-group animated fadeInUp">
-        @foreach(var sp in Model.Take(8))
+        @foreach(var sp in Model.Take(8).OrderBy(i => i.NGAYCAPNHAT))
         { 
         <div class="col-md-3 col-sm-3 col-xs-6 watchmovie-item">
             <div class="article-watchmovie">
@@ -34,7 +34,10 @@
 </div>
 <div id="tab-oncoming" class="tab-pane">
     <div class="row watchmovie-group animated fadeInUp">
-        @foreach (var sp in Model.Take(7).OrderBy(i => i.NGAYCAPNHAT))
+        @{ 
+            var moreFilm = Model.Take(18).OrderByDescending(i => i.NGAYCAPNHAT);
+        }
+        @foreach (var sp in moreFilm.Take(8))
         {
             <div class="col-md-3 col-sm-3 col-xs-6 watchmovie-item" style="margin-left:0">
                 <div class="article-watchmovie">

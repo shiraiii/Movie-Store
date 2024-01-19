@@ -22,11 +22,11 @@ namespace DoAnMonHoc.Controllers
         }
         private List<PHIM> layThemPhim(int count2)
         {
-            return data.PHIMs.OrderByDescending(i => i.NGAYCAPNHAT).Take(count2).ToList();
+            return data.PHIMs.OrderBy(i => i.NGAYCAPNHAT).Take(count2).ToList();
         }
         public ActionResult themPhim()
         {
-            var themPhim = layThemPhim(9);
+            var themPhim = layThemPhim(18);
             return View(themPhim);
         }
      
@@ -41,6 +41,15 @@ namespace DoAnMonHoc.Controllers
                        where s.MAPHIM == id
                        select s;
             return View(Phim.Single());
+        }
+        private List<PHIM> moreNavMovie(int count)
+        {
+            return data.PHIMs.OrderBy(i=>i.NGAYCAPNHAT).Take(count).ToList();
+        }
+        public ActionResult navMovie()
+        {
+            var navmovie = moreNavMovie(8);
+            return View(navmovie);
         }
        
     }
